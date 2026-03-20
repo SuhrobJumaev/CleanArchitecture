@@ -1,6 +1,8 @@
 using CleanArchitecture.Application;
 using CleanArchitecture.DataAccess;
 using CleanArchitecture.WebApi;
+using DomainServices.Implementation;
+using DomainServices.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -23,6 +25,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderDomainService, OrderDomainService>();
 builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer(connectionString));
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 

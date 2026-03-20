@@ -4,6 +4,8 @@
     <Project Path="src/CleanArchitecture.DataAccess/CleanArchitecture.DataAccess.csproj" />
     <Project Path="src/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj" />
     <Project Path="src/CleanArchitecture.WebApi/CleanArchitecture.WebApi.csproj" />
+    <Project Path="src/DomainServices.Implementation/DomainServices.Implementation.csproj" />
+    <Project Path="src/DomainServices.Interfaces/DomainServices.Interfaces.csproj" />
     <Project Path="src/Utils/Utils.csproj" />
   </Folder>
 </Solution>
