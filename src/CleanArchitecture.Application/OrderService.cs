@@ -20,7 +20,7 @@ public class OrderService(AppDbContext dbContext, IMapper mapper) : IOrderServic
 		if (order == null) throw new EntityNotFoundException();
 		
 		var dto = mapper.Map<OrderDto>(order);
-		dto.Total = order.Items.Sum(x => x.Quantity * x.Product.Price);
+		dto.Total = order.GetTotal();
 		return dto;
 	}
 }
