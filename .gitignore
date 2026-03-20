@@ -1,0 +1,82 @@
+# =========================
+# Build
+# =========================
+bin/
+obj/
+out/
+publish/
+
+# =========================
+# User / IDE
+# =========================
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.rsuser
+*.sln.docstates
+*.sln.iml
+
+# Rider / ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment
+# =========================
+.env
+.env.*
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+packages/
+
+# =========================
+# Test / Coverage
+# =========================
+TestResults/
+coverage/
+coverage*.json
+coverage*.xml
+
+# =========================
+# Database
+# =========================
+*.mdf
+*.ldf
+*.ndf
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Node (если есть фронт)
+# =========================
+node_modules/
+
+# =========================
+# VS Code (если используешь)
+# =========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
