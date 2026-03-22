@@ -2,10 +2,15 @@
   <Folder Name="/src/">
     <Project Path="src/CleanArchitecture.Application/CleanArchitecture.Application.csproj" />
     <Project Path="src/CleanArchitecture.DataAccess/CleanArchitecture.DataAccess.csproj" />
-    <Project Path="src/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj" />
     <Project Path="src/CleanArchitecture.WebApi/CleanArchitecture.WebApi.csproj" />
-    <Project Path="src/DomainServices.Implementation/DomainServices.Implementation.csproj" />
-    <Project Path="src/DomainServices.Interfaces/DomainServices.Interfaces.csproj" />
+  </Folder>
+  <Folder Name="/src/0-Utils/">
     <Project Path="src/Utils/Utils.csproj" />
   </Folder>
+  <Folder Name="/src/1-Entities/">
+    <Project Path="src/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj" />
+    <Project Path="src/DomainServices.Implementation/DomainServices.Implementation.csproj" />
+    <Project Path="src/DomainServices.Interfaces/DomainServices.Interfaces.csproj" />
+  </Folder>
+  <Project Path="DataAccess.Interfaces/DataAccess.Interfaces.csproj" />
 </Solution>

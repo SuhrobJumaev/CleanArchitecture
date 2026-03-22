@@ -1,15 +1,12 @@
 using AutoMapper;
-using CleanArchitecture.DataAccess;
+using DataAccess.Interfaces;
 using DomainServices.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace CleanArchitecture.Application;
 
-public class OrderService(AppDbContext dbContext, IMapper mapper, IOrderDomainService orderDomainService) : IOrderService
+public class OrderService(IDbContext dbContext, IMapper mapper, IOrderDomainService orderDomainService) : IOrderService
 {
-	
-
 	public async Task<OrderDto> GetOrderByIdAsync(int id)
 	{
 		Console.WriteLine("Hello World!");
@@ -19,7 +16,7 @@ public class OrderService(AppDbContext dbContext, IMapper mapper, IOrderDomainSe
 		                           .FirstOrDefaultAsync(x => x.Id == id);
 
 		if (order == null) throw new EntityNotFoundException();
-		
+
 		var dto = mapper.Map<OrderDto>(order);
 		dto.Total = orderDomainService.GetTotal(order);
 		return dto;

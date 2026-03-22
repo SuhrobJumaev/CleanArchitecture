@@ -1,9 +1,10 @@
 using CleanArchitecture.Domain.Entities;
+using DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.DataAccess;
 
-    public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+    public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options), IDbContext
     {
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
