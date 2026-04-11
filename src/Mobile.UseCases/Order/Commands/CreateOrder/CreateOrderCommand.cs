@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace UseCases.Order.Commands.CreateOrder;
+namespace Mobile.UseCases.Order.Commands.CreateOrder;
 
 public class CreateOrderCommand : IRequest<int>
 {

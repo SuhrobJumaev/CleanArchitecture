@@ -1,4 +1,4 @@
-namespace UseCases;
+namespace Mobile.UseCases;
 
 public class OrderDto
 {

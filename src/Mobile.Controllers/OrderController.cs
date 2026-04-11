@@ -1,10 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using UseCases;
-using UseCases.Order.Commands.CreateOrder;
-using UseCases.Order.Queries.GetById;
+using Mobile.UseCases;
+using Mobile.UseCases.Order.Commands.CreateOrder;
+using Mobile.UseCases.Order.Queries.GetById;
 
-namespace WebApi.Controllers;
+namespace Mobile.Controllers;
 
 [ApiController]
 [Route("[controller]")]

@@ -18,10 +18,17 @@
     <Folder Name="/src/3-Application/">
         <Project Path="src/ApplicationService.Implementation/ApplicationService.Implementation.csproj" />
         <Project Path="src/ApplicationServices.Interfaces/ApplicationServices.Interfaces.csproj" />
-        <Project Path="src\UseCases\UseCases.csproj" />
     </Folder>
     <Folder Name="/src/4-Infrastructure.Implementation/">
         <Project Path="src\DataAccess\DataAccess.csproj" />
         <Project Path="src\Email.Implementation\Email.Implementation.csproj" />
+    </Folder>
+    <Folder Name="/src/Mobile/">
+        <Project Path="src\Mobile.Controllers\Mobile.Controllers.csproj" />
+        <Project Path="src\Mobile.UseCases\Mobile.UseCases.csproj" />
+    </Folder>
+    <Folder Name="/src/Web/">
+        <Project Path="src/Web.UseCases/Web.UseCases.csproj" />
+        <Project Path="src/WebApi.Controllers/WebApi.Controllers.csproj" />
     </Folder>
 </Solution>

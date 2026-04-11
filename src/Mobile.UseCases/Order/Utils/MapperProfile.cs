@@ -1,7 +1,7 @@
 using AutoMapper;
 using Domain.Entities;
 
-namespace UseCases;
+namespace Mobile.UseCases;
 
 public class MapperProfile : Profile
 {

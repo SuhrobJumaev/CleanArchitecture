@@ -4,7 +4,7 @@ using DomainServices.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace UseCases.Order.Queries.GetById;
+namespace Mobile.UseCases.Order.Queries.GetById;
 
 public class GetOrderByIdQueryHandler(IMapper mapper, IDbContext dbContext, IOrderDomainService orderDomainService)
 	: IRequestHandler<GetOrderByIdQuery, OrderDto>

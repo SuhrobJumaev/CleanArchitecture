@@ -2,7 +2,7 @@ using AutoMapper;
 using DataAccess.Interfaces;
 using MediatR;
 
-namespace UseCases.Order.Commands.CreateOrder;
+namespace Mobile.UseCases.Order.Commands.CreateOrder;
 
 public class CreateOrderCommandHandler(IMapper mapper, IDbContext dbContext) : IRequestHandler<CreateOrderCommand, int>
 {
