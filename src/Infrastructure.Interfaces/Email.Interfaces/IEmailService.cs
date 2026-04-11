@@ -1,4 +1,4 @@
-namespace Infrastructure.Interfaces.Integrations;
+namespace Email.Interfaces;
 
 public interface IEmailService
 {

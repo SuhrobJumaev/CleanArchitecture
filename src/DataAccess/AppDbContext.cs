@@ -1,6 +1,6 @@
+using DataAccess.Interfaces;
 using Domain.Entities;
 using Domain.Enums;
-using Infrastructure.Interfaces.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess;

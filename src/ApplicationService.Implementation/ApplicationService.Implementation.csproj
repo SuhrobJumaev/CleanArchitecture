@@ -4,15 +4,10 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Infrastructure.Interfaces</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\src\Domain\Domain.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.25"/>
+        <ProjectReference Include="..\ApplicationServices.Interfaces\ApplicationServices.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>

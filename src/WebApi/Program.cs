@@ -1,11 +1,19 @@
-using Application;
+using ApplicationService.Implementation;
+using ApplicationServices.Interfaces;
 using DataAccess;
+using DataAccess.Interfaces;
 using DomainServices.Implementation;
 using DomainServices.Interfaces;
-using Infrastructure.Interfaces.Infrastructure;
+using Email.Implementation;
+using Email.Interfaces;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using UseCases;
+using UseCases.Order.Commands.CreateOrder;
 using WebApi;
+using WebApi.Services;
+using WebApp.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +23,6 @@ var connectionString = builder.Configuration.GetConnectionString("SqlServer");
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
-builder.Services.AddControllers();
-
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -25,10 +31,23 @@ builder.Services.AddSwaggerGen(c =>
 	c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArchitecture API", Version = "v1" });
 });
 
-builder.Services.AddScoped<IOrderService, OrderService>();
+//Domain
 builder.Services.AddScoped<IOrderDomainService, OrderDomainService>();
+
+//Infrastructure
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddDbContext<IDbContext, AppDbContext>(option => option.UseSqlServer(connectionString));
+
+//Application
+builder.Services.AddScoped<ISecurityService, SecurityService>();
+
+
+//Frameworks
+builder.Services.AddControllers();
 builder.Services.AddAutoMapper(typeof(MapperProfile));
+builder.Services.AddMediatR(typeof(CreateOrderCommand));
+
 
 var app = builder.Build();
 

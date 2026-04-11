@@ -1,6 +1,6 @@
-using Infrastructure.Interfaces.Integrations;
+using Email.Interfaces;
 
-namespace Infrastructure.Implementation;
+namespace Email.Implementation;
 
 public class EmailService : IEmailService
 {

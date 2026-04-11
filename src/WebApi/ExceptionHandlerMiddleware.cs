@@ -1,4 +1,4 @@
-using CleanArchitecture.Application;
+using UseCases;
 
 namespace WebApi;
 

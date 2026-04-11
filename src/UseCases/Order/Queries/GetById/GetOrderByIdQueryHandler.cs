@@ -1,20 +1,20 @@
 using AutoMapper;
-using CleanArchitecture.Application;
+using DataAccess.Interfaces;
 using DomainServices.Interfaces;
-using Infrastructure.Interfaces.Infrastructure;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application;
+namespace UseCases.Order.Queries.GetById;
 
-public class OrderService(IDbContext dbContext, IMapper mapper, IOrderDomainService orderDomainService) : IOrderService
+public class GetOrderByIdQueryHandler(IMapper mapper, IDbContext dbContext, IOrderDomainService orderDomainService)
+	: IRequestHandler<GetOrderByIdQuery, OrderDto>
 {
-	public async Task<OrderDto> GetOrderByIdAsync(int id)
+	public async Task<OrderDto> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
 	{
-		Console.WriteLine("Hello World!");
 		var order = await dbContext.Orders
 		                           .AsNoTracking()
 		                           .Include(x => x.Items).ThenInclude(x => x.Product)
-		                           .FirstOrDefaultAsync(x => x.Id == id);
+		                           .FirstOrDefaultAsync(x => x.Id == query.Id);
 
 		if (order == null) throw new EntityNotFoundException();
 

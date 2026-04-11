@@ -1,4 +1,4 @@
-namespace Infrastructure.Interfaces.WebApp;
+namespace WebApp.Interfaces;
 
 public interface ICurrentUserService
 {
