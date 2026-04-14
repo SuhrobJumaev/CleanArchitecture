@@ -8,7 +8,7 @@
     <Folder Name="/src/1-Entities/">
         <Project Path="src/DomainServices.Implementation/DomainServices.Implementation.csproj" />
         <Project Path="src/DomainServices.Interfaces/DomainServices.Interfaces.csproj" />
-        <Project Path="src\Domain\Domain.csproj" />
+        <Project Path="src\Entities\Entities.csproj" />
     </Folder>
     <Folder Name="/src/2-Infrastructure.Interfaces/">
         <Project Path="src/Infrastructure.Interfaces/DataAccess.Interfaces/DataAccess.Interfaces.csproj" />
@@ -20,8 +20,8 @@
         <Project Path="src/ApplicationServices.Interfaces/ApplicationServices.Interfaces.csproj" />
     </Folder>
     <Folder Name="/src/4-Infrastructure.Implementation/">
-        <Project Path="src\DataAccess\DataAccess.csproj" />
-        <Project Path="src\Email.Implementation\Email.Implementation.csproj" />
+        <Project Path="src\DataAccess.MsSql\DataAccess.MsSql.csproj" />
+        <Project Path="src\Email.MailHandler\Email.MailHandler.csproj" />
     </Folder>
     <Folder Name="/src/Mobile/">
         <Project Path="src\Mobile.Controllers\Mobile.Controllers.csproj" />

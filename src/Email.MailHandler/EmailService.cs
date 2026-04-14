@@ -1,6 +1,6 @@
 using Email.Interfaces;
 
-namespace Email.Implementation;
+namespace Email.MailHandler;
 
 public class EmailService : IEmailService
 {

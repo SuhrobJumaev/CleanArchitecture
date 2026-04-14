@@ -8,7 +8,7 @@ public class CreateOrderCommandHandler(IMapper mapper, IDbContext dbContext) : I
 {
 	public async Task<int> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
 	{
-		var order = mapper.Map<Domain.Entities.Order>(command.Dto);
+		var order = mapper.Map<Entities.Order>(command.Dto);
 
 		dbContext.Orders.Add(order);
 		await dbContext.SaveChangesAsync();

@@ -1,6 +1,6 @@
-using Domain.Enums;
+using Entities.Enums;
 
-namespace Domain.Entities;
+namespace Entities;
 
 public class Order
 {

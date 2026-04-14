@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Entities;
 using DomainServices.Interfaces;
 
 namespace DomainServices.Implementation;

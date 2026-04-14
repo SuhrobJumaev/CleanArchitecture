@@ -1,9 +1,9 @@
 using DataAccess.Interfaces;
-using Domain.Entities;
-using Domain.Enums;
+using Entities;
+using Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAccess;
+namespace DataAccess.MsSql;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options), IDbContext
 {

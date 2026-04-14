@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace DataAccess;
+namespace DataAccess.MsSql;
 
 public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {

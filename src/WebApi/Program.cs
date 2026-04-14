@@ -1,10 +1,10 @@
 using ApplicationService.Implementation;
 using ApplicationServices.Interfaces;
-using DataAccess;
+using DataAccess.MsSql;
 using DataAccess.Interfaces;
 using DomainServices.Implementation;
 using DomainServices.Interfaces;
-using Email.Implementation;
+using Email.MailHandler;
 using Email.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +31,7 @@ builder.Services.AddSwaggerGen(c =>
 	c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArchitecture API", Version = "v1" });
 });
 
-//Domain
+//Entities
 builder.Services.AddScoped<IOrderDomainService, OrderDomainService>();
 
 //Infrastructure

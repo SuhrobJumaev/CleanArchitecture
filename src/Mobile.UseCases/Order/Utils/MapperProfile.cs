@@ -1,5 +1,5 @@
 using AutoMapper;
-using Domain.Entities;
+using Entities;
 
 namespace Mobile.UseCases;
 
@@ -7,8 +7,8 @@ public class MapperProfile : Profile
 {
 	public MapperProfile()
 	{
-		CreateMap<Domain.Entities.Order, OrderDto>();
-		CreateMap<CreateOrderDto, Domain.Entities.Order>();
+		CreateMap<Entities.Order, OrderDto>();
+		CreateMap<CreateOrderDto, Entities.Order>();
 		CreateMap<OrderItemDto, OrderItem>();
 	}
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace DataAccess.Migrations
+namespace DataAccess.MsSql.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20260319171346_InitialCreate")]
@@ -24,7 +24,7 @@ namespace DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Entities.Order", b =>
+            modelBuilder.Entity("Entities.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.OrderItem", b =>
+            modelBuilder.Entity("Entities.Entities.OrderItem", b =>
                 {
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
@@ -83,7 +83,7 @@ namespace DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.Product", b =>
+            modelBuilder.Entity("Entities.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -123,15 +123,15 @@ namespace DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Entities.OrderItem", b =>
+            modelBuilder.Entity("Entities.Entities.OrderItem", b =>
                 {
-                    b.HasOne("Domain.Entities.Order", "Order")
+                    b.HasOne("Entities.Entities.Order", "Order")
                         .WithMany("Items")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.Product", "Product")
+                    b.HasOne("Entities.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -142,7 +142,7 @@ namespace DataAccess.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Order", b =>
+            modelBuilder.Entity("Entities.Entities.Order", b =>
                 {
                     b.Navigation("Items");
                 });
