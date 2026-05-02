@@ -6,8 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\DomainServices.Interfaces\DomainServices.Interfaces.csproj"/>
-    </ItemGroup>
-
 </Project>

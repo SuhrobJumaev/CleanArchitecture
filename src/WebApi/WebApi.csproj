@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Hangfire" Version="1.8.23"/>
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0"/>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.25"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0"/>
@@ -14,14 +15,15 @@
 
     <ItemGroup>
         <ProjectReference Include="..\ApplicationService.Implementation\ApplicationService.Implementation.csproj"/>
-        <ProjectReference Include="..\Mobile.Controllers\Mobile.Controllers.csproj" />
-        <ProjectReference Include="..\Mobile.UseCases\Mobile.UseCases.csproj" />
-        <ProjectReference Include="..\DataAccess.MsSql\DataAccess.MsSql.csproj" />
+        <ProjectReference Include="..\Infrastructure.Implementation\Delivery.Yandex\Delivery.Yandex.csproj"/>
+        <ProjectReference Include="..\Mobile.Controllers\Mobile.Controllers.csproj"/>
+        <ProjectReference Include="..\Mobile.UseCases\Mobile.UseCases.csproj"/>
+        <ProjectReference Include="..\DataAccess.MsSql\DataAccess.MsSql.csproj"/>
         <ProjectReference Include="..\DomainServices.Implementation\DomainServices.Implementation.csproj"/>
-        <ProjectReference Include="..\Email.MailHandler\Email.MailHandler.csproj" />
+        <ProjectReference Include="..\Email.MailHandler\Email.MailHandler.csproj"/>
         <ProjectReference Include="..\DataAccess.Interface\DataAccess.Interface.csproj"/>
         <ProjectReference Include="..\Infrastructure.Interfaces\WebApp.Interfaces\WebApp.Interfaces.csproj"/>
-        <ProjectReference Include="..\WebApi.Controllers\WebApi.Controllers.csproj" />
+        <ProjectReference Include="..\WebApi.Controllers\WebApi.Controllers.csproj"/>
     </ItemGroup>
 
     <ItemGroup>

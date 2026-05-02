@@ -1,0 +1,16 @@
+using Delivery.Interfaces;
+
+namespace Delivery.Yandex;
+
+public class DeliveryService : IDeliveryService
+{
+	public decimal CalculateDeliveryCost(float weight)
+	{
+		return (decimal)weight * 10;
+	}
+
+	public Task<bool> IsDeliveredAsync(int orderId)
+	{
+		return Task.FromResult(true);
+	}
+}

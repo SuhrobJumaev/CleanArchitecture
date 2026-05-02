@@ -1,15 +1,19 @@
 using ApplicationService.Implementation;
 using ApplicationServices.Interfaces;
-using DataAccess.MsSql;
 using DataAccess.Interfaces;
+using DataAccess.MsSql;
+using Delivery.Interfaces;
+using Delivery.Yandex;
 using DomainServices.Implementation;
 using DomainServices.Interfaces;
-using Email.MailHandler;
 using Email.Interfaces;
+using Email.MailHandler;
+using Hangfire;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Mobile.UseCases;
+using Mobile.UseCases.Order.BackgroundJobs;
 using Mobile.UseCases.Order.Commands.CreateOrder;
 using WebApi;
 using WebApi.Services;
@@ -36,8 +40,11 @@ builder.Services.AddScoped<IOrderDomainService, OrderDomainService>();
 
 //Infrastructure
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.AddScoped<IBackgroundJobService, BackgroundJobService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IDeliveryService, DeliveryService>();
 builder.Services.AddDbContext<IDbContext, AppDbContext>(option => option.UseSqlServer(connectionString));
+
 
 //Application
 builder.Services.AddScoped<ISecurityService, SecurityService>();
@@ -47,9 +54,23 @@ builder.Services.AddScoped<ISecurityService, SecurityService>();
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddMediatR(typeof(CreateOrderCommand));
+builder.Services.AddScoped<UpdateDeliveryStatusJob>();
+builder.Services.AddHangfire(config => config.UseSqlServerStorage(connectionString));
+builder.Services.AddHangfireServer();
 
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+	var recurringJobManager = scope.ServiceProvider.GetRequiredService<IRecurringJobManager>();
+
+	recurringJobManager.AddOrUpdate<UpdateDeliveryStatusJob>(
+		"UpdateDeliveryStatusJob",
+		job => job.ExecuteAsync(),
+		Cron.Minutely
+	);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

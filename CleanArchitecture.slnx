@@ -12,6 +12,7 @@
     </Folder>
     <Folder Name="/src/2-Infrastructure.Interfaces/">
         <Project Path="src/Infrastructure.Interfaces/DataAccess.Interfaces/DataAccess.Interfaces.csproj" />
+        <Project Path="src/Infrastructure.Interfaces/Delivery.Interfaces/Delivery.Interfaces.csproj" />
         <Project Path="src/Infrastructure.Interfaces/Email.Interfaces/Email.Interfaces.csproj" />
         <Project Path="src/Infrastructure.Interfaces/WebApp.Interfaces/WebApp.Interfaces.csproj" />
     </Folder>
@@ -20,6 +21,7 @@
         <Project Path="src/ApplicationServices.Interfaces/ApplicationServices.Interfaces.csproj" />
     </Folder>
     <Folder Name="/src/4-Infrastructure.Implementation/">
+        <Project Path="src/Infrastructure.Implementation/Delivery.Yandex/Delivery.Yandex.csproj" />
         <Project Path="src\DataAccess.MsSql\DataAccess.MsSql.csproj" />
         <Project Path="src\Email.MailHandler\Email.MailHandler.csproj" />
     </Folder>

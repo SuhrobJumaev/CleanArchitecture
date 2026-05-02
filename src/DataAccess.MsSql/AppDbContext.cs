@@ -1,6 +1,6 @@
 using DataAccess.Interfaces;
-using Entities;
 using Entities.Enums;
+using Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.MsSql;
@@ -19,9 +19,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 
 		modelBuilder.Entity<Product>().HasData(new List<Product>
 		{
-			new() { Id = 1, Name = "Product 1", Price = 1 },
-			new() { Id = 2, Name = "Product 2", Price = 10 },
-			new() { Id = 3, Name = "Product 3", Price = 100 }
+			new() { Id = 1, Name = "Product 1", Price = 1, Weight = 1 },
+			new() { Id = 2, Name = "Product 2", Price = 10, Weight = 10 },
+			new() { Id = 3, Name = "Product 3", Price = 100, Weight = 100 }
 		});
 
 		modelBuilder.Entity<Order>().HasData(new List<Order>

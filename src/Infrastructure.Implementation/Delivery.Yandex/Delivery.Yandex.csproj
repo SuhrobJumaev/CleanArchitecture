@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DomainServices.Interfaces\DomainServices.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure.Interfaces\Delivery.Interfaces\Delivery.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>
