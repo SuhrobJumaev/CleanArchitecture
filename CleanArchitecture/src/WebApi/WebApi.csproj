@@ -25,6 +25,9 @@
       <ProjectReference Include="..\Infrastructure.Interfaces\Delivery.Interfaces\Delivery.Interfaces.csproj" />
       <ProjectReference Include="..\Infrastructure.Interfaces\WebApp.Interfaces\WebApp.Interfaces.csproj" />
       <ProjectReference Include="..\Mobile.UseCases\Mobile.UseCases.csproj" />
+      <ProjectReference Include="..\Mobile.Controllers\Mobile.Controllers.csproj" />
+
+
     </ItemGroup>
 
     <ItemGroup>
